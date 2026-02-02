@@ -56,3 +56,39 @@ with open("blast_result.xml", "w") as out_handle:
     out_handle.write(result_handle.read())
 
 print("BLAST search completed")
+
+# STEP 5: Functional Annotation (BLAST result interpretation)
+
+print("Performing functional annotation...")
+
+with open("blast_result.xml") as result_handle:
+    blast_record = NCBIXML.read(result_handle)
+
+# Open output file
+with open("functional_annotation.txt", "w") as out:
+
+    out.write("FUNCTIONAL ANNOTATION REPORT\n")
+    out.write("="*50 + "\n\n")
+
+    out.write(f"Query ID: {blast_record.query}\n")
+    out.write(f"Query Length: {blast_record.query_length}\n\n")
+
+    # Check if hits are present
+    if not blast_record.alignments:
+        out.write("No significant BLAST hits found.\n")
+    else:
+        out.write("Top BLAST Hits:\n\n")
+
+        # Extract top 5 hits
+        for alignment in blast_record.alignments[:5]:
+            hsp = alignment.hsps[0]
+
+            out.write(f"Protein: {alignment.title}\n")
+            out.write(f"Length: {alignment.length}\n")
+            out.write(f"E-value: {hsp.expect}\n")
+            out.write(f"Identity: {hsp.identities}/{hsp.align_length}\n")
+            out.write(f"Percent Identity: {round((hsp.identities/hsp.align_length)*100, 2)}%\n")
+            out.write("-"*40 + "\n")
+
+print("Functional annotation file created: functional_annotation.txt")
+
