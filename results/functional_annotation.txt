@@ -1,0 +1,34 @@
+FUNCTIONAL ANNOTATION REPORT
+==================================================
+
+Query ID: unnamed protein product
+Query Length: 157 aa
+Database: nr
+
+Found 50 hits. Showing Top 5:
+
+Hit #1: ref|NP_001099285.1| intraflagellar transport protein 20 homolog [Rattus norvegic...
+Accession: NP_001099285
+E-value: 3.24373e-108
+Identity: 157/157 (100.0%)
+----------------------------------------
+Hit #2: ref|XP_034362280.1| intraflagellar transport protein 20 homolog isoform X1 [Arvi...
+Accession: XP_034362280
+E-value: 3.71592e-106
+Identity: 155/157 (98.7%)
+----------------------------------------
+Hit #3: ref|XP_028615248.1| intraflagellar transport protein 20 homolog isoform X1 [Gram...
+Accession: XP_028615248
+E-value: 9.97734e-106
+Identity: 154/157 (98.1%)
+----------------------------------------
+Hit #4: ref|XP_003495824.1| intraflagellar transport protein 20 homolog isoform X1 [Cric...
+Accession: XP_003495824
+E-value: 3.33641e-105
+Identity: 153/157 (97.5%)
+----------------------------------------
+Hit #5: ref|XP_052051352.1| intraflagellar transport protein 20 homolog isoform X1 [Apod...
+Accession: XP_052051352
+E-value: 1.16995e-104
+Identity: 154/157 (98.1%)
+----------------------------------------
