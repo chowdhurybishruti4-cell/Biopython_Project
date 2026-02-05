@@ -1,0 +1,14 @@
+# Generate QC Summary File
+try:
+    with open(QC_FILE, "w") as qc_out:
+        qc_out.write("SEQUENCE QUALITY CONTROL REPORT\n")
+        qc_out.write("=================================\n\n")
+        qc_out.write(f"Sequence ID: {dna_record.id}\n")
+        qc_out.write(f"DNA Length : {len(dna_seq)} bp\n")
+        qc_out.write(f"GC Content : {gc:.2f}%\n")
+        
+        # Note: Protein stats will be added after translation (Step 4)
+    print(f" Basic QC metrics saved to: {QC_FILE}")
+
+except Exception as e:
+    print(f" Error writing QC file: {e}")
